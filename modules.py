@@ -36,8 +36,14 @@ def inputInt(msg):
         return valor
 
 
-def menu(title, lista):
-
+def menu(title, lista, min, max):
+    '''
+    * Gera um menu simpels com seleção e validação de opções
+    * @param ordination Define se a ordenação será crescente(TRUE) ou decrescente(FALSE)
+    * @param type Define o tipo da ordenação por nome do aluno (abc) ou por média individual (mean)
+    * @returns void
+    ''' 
+                   
     print('='*50)   
     print(f'{title:^50}')
     print('='*50)
@@ -53,7 +59,7 @@ def menu(title, lista):
             print(f"{colors('ERRO: valor inválido!', 'red')}")
             continue
 
-        if 1 <= op <= 7:
+        if min <= op <= max:
             return op
         else:
             print(f"{colors('ERRO: seleção inválida!', 'red')}")
